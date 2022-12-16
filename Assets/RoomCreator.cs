@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class RoomCreator : MonoBehaviour {
@@ -53,7 +53,7 @@ public class RoomCreator : MonoBehaviour {
 				endPos = sibiling.GetComponent<RoomCreator>().chooseDoorPoint(2);
 			}else if (sibiling.transform.position.z > transform.position.z + transform.localScale.z){
 				startPos = chooseDoorPoint(2);
-				endPos = sibiling.GetComponent<RoomCreator>().chooseDoorPoint(1);	
+				endPos = sibiling.GetComponent<RoomCreator>().chooseDoorPoint(1);//这地方给0，生成的更规则，给1生成的更复杂些
 			}else if (sibiling.transform.position.x + sibiling.transform.localScale.x < transform.position.x){
 				startPos = chooseDoorPoint(3);
 				endPos = sibiling.GetComponent<RoomCreator>().chooseDoorPoint(1);	

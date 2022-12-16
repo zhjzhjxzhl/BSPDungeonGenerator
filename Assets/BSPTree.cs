@@ -10,6 +10,7 @@ public class BSPTree : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		Random.seed = 4;
 		GameObject startCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		startCube.transform.localScale = new Vector3 (150,1,150);
 		startCube.tag = "GenSection";
@@ -29,10 +30,10 @@ public class BSPTree : MonoBehaviour {
 		parentNode.setCube(startCube);
 		
 		
-		for (int i = 0; i < 7; i++){
+		for (int i = 0; i <7; i++){
 			split (parentNode);	
 		}
-		
+
 		//create the rooms
 		createRooms(parentNode);
 		

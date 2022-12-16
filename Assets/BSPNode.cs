@@ -53,8 +53,9 @@ public class BSPNode {
 				_aSection.transform.position.x - ((xSplit - _aSection.transform.localScale.x)/2),
 				_aSection.transform.position.y,
 				_aSection.transform.position.z);
-			cube0.renderer.material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			cube0.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 			cube0.tag = "GenSection";
+			cube0.name = "left";
 			leftNode = new BSPNode();
 			leftNode.setCube(cube0);
 			leftNode.setParentNode(this);
@@ -66,13 +67,14 @@ public class BSPNode {
 				_aSection.transform.position.x + ((split1 - _aSection.transform.localScale.x)/2),
 				_aSection.transform.position.y,
 				_aSection.transform.position.z);
-			cube1.renderer.material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			cube1.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 			cube1.tag = "GenSection";
 			rightNode = new BSPNode();
 			rightNode.setCube(cube1);
 			rightNode.setParentNode(this);
-			
-			GameObject.DestroyImmediate(_aSection);
+            cube1.name = "right";
+
+            GameObject.DestroyImmediate(_aSection);
 		}		
 	}
 	
@@ -88,11 +90,12 @@ public class BSPNode {
 				_aSection.transform.position.x,
 				_aSection.transform.position.y,
 				_aSection.transform.position.z - ((zSplit - _aSection.transform.localScale.z)/2));
-			cube0.renderer.material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			cube0.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 			cube0.tag = "GenSection";
 			leftNode = new BSPNode();
 			leftNode.setCube(cube0);	
 			leftNode.setParentNode(this);
+			cube0.name = "left_";
 			
 			GameObject cube1 = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			cube1.transform.localScale = new Vector3 (_aSection.transform.localScale.x, _aSection.transform.localScale.y,zSplit1);
@@ -100,13 +103,14 @@ public class BSPNode {
 				_aSection.transform.position.x,
 				_aSection.transform.position.y,
 				_aSection.transform.position.z+ ((zSplit1 - _aSection.transform.localScale.z)/2));
-			cube1.renderer.material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
+			cube1.GetComponent<Renderer>().material.color = new Color(Random.Range(0.0f,1.0f),Random.Range(0.0f,1.0f), Random.Range(0.0f,1.0f));
 			cube1.tag = "GenSection";
 			rightNode = new BSPNode();
 			rightNode.setCube(cube1);
 			rightNode.setParentNode(this);
-			
-			GameObject.DestroyImmediate(_aSection);
+			cube1.name = "right_";
+
+            GameObject.DestroyImmediate(_aSection);
 		}
 	}
 	

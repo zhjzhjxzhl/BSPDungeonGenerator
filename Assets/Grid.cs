@@ -1,8 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// 一个格子
+/// </summary>
 public class Grid {
-	
 	private int gridWidth;
 	private int gridHeight;
 	
